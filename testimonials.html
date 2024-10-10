@@ -8,7 +8,97 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.scss">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #f8f9fa;
+            /* Light background for the page */
+            font-family: Arial, sans-serif;
+            /* Custom font */
+        }
 
+        /* Testimonial Section Styling */
+        .testimonial-section {
+            background-color: #ffffff;
+            /* White background for contrast */
+            padding: 3rem 0;
+            /* Increased padding */
+        }
+
+        .testimonial-card {
+            border-radius: 12px;
+            /* Rounded corners */
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            /* Light blue gradient */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        /* Add hover effect to cards */
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            /* Slightly scale up */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Shadow effect on hover */
+        }
+
+        /* Card Text Styles */
+        .testimonial-card h5 {
+            color: #1976d2;
+            /* Darker blue for names */
+            font-weight: bold;
+            /* Bold names */
+        }
+
+        .testimonial-card p.card-text {
+            color: #424242;
+            /* Darker text for quotes */
+            font-size: 1.1rem;
+            /* Increased font size for better readability */
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            background-color: #e3f2fd;
+            /* Light blue background for metrics */
+            padding: 3rem 0;
+            /* Increased padding */
+            border-radius: 8px;
+            /* Rounded corners for the metrics section */
+        }
+
+        .metric {
+            font-size: 2rem;
+            /* Larger font for metrics */
+            color: #2196f3;
+            /* Blue color for metrics */
+            font-weight: bold;
+            /* Bold font for emphasis */
+        }
+
+        /* Client Logos Section */
+        .client-logos {
+            padding: 3rem 0;
+            /* Increased padding for logos section */
+        }
+
+        .client-logo {
+            max-height: 100px;
+            /* Consistent logo height */
+            object-fit: contain;
+            /* Maintain aspect ratio */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #343a40;
+            /* Dark footer background */
+            color: #ffffff;
+            /* White text for contrast */
+        }
+    </style>
 </head>
 
 <body>
@@ -116,6 +206,7 @@
             </div>
         </div>
     </section>
+
     <!-- Client Logos Section -->
     <section class="client-logos py-5">
         <div class="container">
@@ -136,7 +227,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
