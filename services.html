@@ -8,6 +8,51 @@
     <link rel="stylesheet" href="css/styles.scss">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for the page */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #f8cdda, #1d2b64);
+            color: #fff;
+        }
+
+        .services {
+            flex-grow: 1;
+            padding: 50px 0;
+        }
+
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 0;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,50 +78,79 @@
     </nav>
 
     <!-- Services Section -->
-    <section class="services py-5">
+    <section class="services">
         <div class="container text-center">
             <h2 class="mb-5">Our Services</h2>
             <div class="row">
+                <!-- Service Cards -->
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service1.png" alt="Service 1" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="images/mem1.jpg" alt="Service 1" class="img-fluid">
                         <h5>Search Engine Optimization (SEO)</h5>
                         <p>Improve your website's visibility on search engines and attract organic traffic.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service2.png" alt="Service 2" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service2.png" alt="Service 2" class="img-fluid">
                         <h5>Social Media Marketing</h5>
                         <p>Engage your audience on social platforms and build brand awareness.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service3.png" alt="Service 3" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service3.png" alt="Service 3" class="img-fluid">
                         <h5>Content Marketing</h5>
                         <p>Create compelling content that attracts and retains customers.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service4.png" alt="Service 4" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service4.png" alt="Service 4" class="img-fluid">
                         <h5>Email Marketing</h5>
                         <p>Reach your customers directly in their inbox and nurture leads.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service5.png" alt="Service 5" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service5.png" alt="Service 5" class="img-fluid">
                         <h5>Pay-Per-Click Advertising</h5>
                         <p>Drive targeted traffic to your website through paid ads.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="service-card border rounded shadow p-3">
-                        <img src="path/to/service6.png" alt="Service 6" class="img-fluid mb-3">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service6.png" alt="Service 6" class="img-fluid">
                         <h5>Web Development</h5>
                         <p>Create stunning, responsive websites that reflect your brand.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service7.png" alt="Service 7" class="img-fluid">
+                        <h5>Brand Strategy</h5>
+                        <p>Define your brand's direction and establish a strong market presence.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service8.png" alt="Service 8" class="img-fluid">
+                        <h5>Influencer Marketing</h5>
+                        <p>Collaborate with influencers to expand your reach and credibility.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service9.png" alt="Service 9" class="img-fluid">
+                        <h5>Video Marketing</h5>
+                        <p>Utilize engaging videos to capture your audience's attention.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card border shadow">
+                        <img src="path/to/service10.png" alt="Service 10" class="img-fluid">
+                        <h5>Analytics and Reporting</h5>
+                        <p>Measure your marketing efforts with comprehensive analytics and insights.</p>
                     </div>
                 </div>
             </div>
@@ -84,8 +158,8 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="cta bg-light py-5">
-        <div class="container text-center">
+    <section class="cta text-center">
+        <div class="container">
             <h2>Ready to Elevate Your Business?</h2>
             <p>Contact us today to discuss how we can help you achieve your marketing goals!</p>
             <a href="contact.html" class="btn btn-primary">Get Started</a>
