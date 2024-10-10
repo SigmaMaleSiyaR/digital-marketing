@@ -1,0 +1,31 @@
+/* Custom styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url('https://via.placeholder.com/1920x600');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#about .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#about .col-md-4 {
+    padding: 15px;
+}
