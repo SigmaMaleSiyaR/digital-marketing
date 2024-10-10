@@ -4,19 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Digital Marketing Agency</title>
+    <title>About Us - Uniment Solutions LLP</title>
     <link rel="stylesheet" href="css/styles.scss">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        .team-card {
-            /* Set minimum height for cards */
-            transition: transform 0.3s, box-shadow 0.3s;
+        body {
+            background-color: #f8f9fa;
+            /* Light grey for a softer background */
+            color: #343a40;
+            /* Dark grey text for better contrast */
+            font-family: 'Arial', sans-serif;
         }
 
-        .team-card:hover {
+        .hero {
+            background-image: url('images/trust.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            /* Keep text white on hero for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            filter: grayscale(100%);
+            /* Add a grayscale filter to the hero image */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .card {
+            transition: transform 0.3s;
+            border: 1px solid #ced4da;
+            /* Light border for cards */
+            background-color: #ffffff;
+            /* White background for cards */
+        }
+
+        .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow on hover */
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            filter: grayscale(100%);
+            /* Grayscale images for team members */
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .mission-card,
+        .vision-card {
+            flex: 1;
+            margin: 0 1rem;
+            border: 1px solid #343a40;
+            /* Dark border for mission/vision cards */
+        }
+
+        footer {
+            background-color: #343a40;
+            /* Dark footer */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-event:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            height: 2px;
+            width: 1rem;
+            background: #343a40;
+            /* Dark line for the timeline */
+        }
+
+        .timeline-event h5 {
+            margin-bottom: 0.5rem;
+            color: #343a40;
+            /* Ensure timeline event headers are dark */
         }
     </style>
 </head>
@@ -26,7 +126,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Digital Marketing Agency</a>
+            <a class="navbar-brand" href="index.html">Uniment Solutions LLP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,85 +143,109 @@
         </div>
     </nav>
 
-    <!-- About Us Section -->
-    <section class="about py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">About Us</h2>
-            <p class="mb-4">We are a team of passionate digital marketers dedicated to helping businesses grow online.
-                Our expertise spans across various areas of digital marketing, ensuring that we provide tailored
-                solutions to meet your unique needs.</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Empowering Your Digital Journey</h1>
+        <p>Uniment Solutions LLP is a digital marketing company based in Jaipur, India, specializing in services
+            like SEO, social media marketing, and content marketing.</p>
+    </div>
+
+    <!-- Mission and Vision -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Our Mission & Vision</h2>
+            <div class="mission-vision">
+                <div class="mission-card card p-4">
+                    <h4>Our Mission</h4>
+                    <p>To empower businesses through tailored digital marketing strategies that enhance visibility and
+                        drive growth.</p>
+                </div>
+                <div class="vision-card card p-4">
+                    <h4>Our Vision</h4>
+                    <p>To become a leading provider of innovative digital marketing solutions on a national and
+                        international scale.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team py-5">
+    <!-- History Timeline -->
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-5">Meet Our Team</h2>
+            <h2 class="text-center">Our History</h2>
+            <div class="timeline">
+                <div class="timeline-event">
+                    <h5>September 25, 2024</h5>
+                    <p>Uniment Solutions LLP was founded by Manju Sharma and Saurabh Sharma in Jaipur, India.</p>
+                </div>
+                <div class="timeline-event">
+                    <h5>October 2024</h5>
+                    <p>Launched our first digital marketing campaigns for local businesses.</p>
+                </div>
+                <div class="timeline-event">
+                    <h5>January 2025</h5>
+                    <p>Expanded our service offerings to include PPC and content marketing.</p>
+                </div>
+                <div class="timeline-event">
+                    <h5>June 2025</h5>
+                    <p>Reached over 100 satisfied clients and recognized as a trusted agency in the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Meet Our Team</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="images/mem1.jpg" class="card-img-top" alt="Team Member 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Sapan Sharma</h5>
-                            <p class="card-text">CEO</p>
-                            <p class="card-text">Sapan is a visionary leader with a passion for digital marketing and a
-                                track record of driving successful campaigns.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/ceo.jpg" alt="Sapan Sharma">
+                        <h5>Sapan Sharma</h5>
+                        <p>CEO</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="path/to/team_member2.jpg" class="card-img-top" alt="Team Member 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Mohit Uphadhya</h5>
-                            <p class="card-text">Managing Director</p>
-                            <p class="card-text">Mohit brings years of experience in digital strategy and execution,
-                                helping clients achieve their marketing goals.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/manju.jpg" alt="Manju Sharma">
+                        <h5>Manju Sharma</h5>
+                        <p>Board of Directors</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="path/to/team_member3.jpg" class="card-img-top" alt="Team Member 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Bhavya Agrawal</h5>
-                            <p class="card-text">HR Head</p>
-                            <p class="card-text">Bhavya is responsible for fostering a positive workplace culture and
-                                ensuring our team is at its best.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/saurabh.jpg" alt="Saurabh Sharma">
+                        <h5>Saurabh Sharma</h5>
+                        <p>Board of Directors</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="path/to/team_member4.jpg" class="card-img-top" alt="Team Member 4">
-                        <div class="card-body">
-                            <h5 class="card-title">Aditya Pachoriya</h5>
-                            <p class="card-text">Content Writer</p>
-                            <p class="card-text">Aditya crafts compelling content that resonates with audiences and
-                                drives engagement.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/mohit.jpg" alt="Mohit Sharma">
+                        <h5>Mohit Sharma</h5>
+                        <p>Managing Director</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="path/to/team_member5.jpg" class="card-img-top" alt="Team Member 5">
-                        <div class="card-body">
-                            <h5 class="card-title">FH Vidhi Basanwal</h5>
-                            <p class="card-text">Finance Manager</p>
-                            <p class="card-text">Vidhi manages our financial operations, ensuring we are financially
-                                sound and sustainable.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/bhavya.jpg" alt="Bhavya Agrawal">
+                        <h5>Bhavya Agrawal</h5>
+                        <p>Head of HR</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card team-card border rounded shadow p-3">
-                        <img src="path/to/team_member6.jpg" class="card-img-top" alt="Team Member 6">
-                        <div class="card-body">
-                            <h5 class="card-title">Manju Sharma</h5>
-                            <p class="card-text">Director</p>
-                            <p class="card-text">Manju focuses on client relationships and ensures that we deliver
-                                exceptional service at all times.</p>
-                        </div>
+                    <div class="team-card card p-3">
+                        <img src="path/to/vidhi.jpg" alt="Vidhi Basanwal">
+                        <h5>Vidhi Basanwal</h5>
+                        <p>Finance Executive Officer</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="team-card card p-3">
+                        <img src="path/to/aditya.jpg" alt="Aditya Pachoriya">
+                        <h5>Aditya Pachoriya</h5>
+                        <p>Data Analyst</p>
                     </div>
                 </div>
             </div>
@@ -130,13 +254,17 @@
 
     <!-- Footer -->
     <footer>
-        <p class="text-center py-3">&copy; 2024 Digital Marketing Agency. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Uniment Solutions LLP. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-PIV4xVNRW+5YX7p9uW5xO03pU1zJ3D7c6YTA3+uP4Y4tbE8GmMN3VFbI94hOVhUe"
         crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-nw3dW0YXHtbD3w4xjD21Zt27o4xA5Avj0eX5rA5nUQ32+WwQTwWpeUCr9Sk2y/Bn"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
