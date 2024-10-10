@@ -1,12 +1,114 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$light-background: #f8f9fa;
+$dark-background: #343a40;
+$text-color: #212529;
+
+// Add a new background style for the body
 body {
-    background-color: #f8f9fa; // Light background for visibility
+    font-family: Arial, sans-serif;
+    background-color: $light-background; // Change this to a color or use background-image: url('your-image-url.jpg'); for an image.
 }
 
-.testimonial-card {
-    background-color: #ffffff; // Ensure the card has a white background
-    border-radius: 10px; // Optional: Add rounded corners
+.navbar {
+    margin-bottom: 20px;
 }
 
-.metric {
-    font-size: 2rem; // Increase metric font size for emphasis
+.testimonial-section {
+    background-color: $light-background;
+    padding: 60px 0;
+
+    h2 {
+        margin-bottom: 30px;
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    .testimonial-card {
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: $text-color;
+        }
+
+        .card-title {
+            margin-top: 20px;
+            font-weight: bold;
+            color: $primary-color;
+        }
+    }
+}
+
+.metrics-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+
+    h2 {
+        margin-bottom: 30px;
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    .metric {
+        font-size: 40px;
+        font-weight: bold;
+        color: $primary-color;
+    }
+}
+
+.client-logos {
+    background-color: $light-background;
+    padding: 60px 0;
+
+    h2 {
+        margin-bottom: 30px;
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    img {
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            animation: pulse 0.5s infinite; // Add pulse animation on hover
+        }
+    }
+}
+
+// Add a keyframes for pulse animation
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $dark-background;
+    color: white;
+
+    p {
+        margin: 0;
+    }
 }

@@ -4,17 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Agency - About Us</title>
+    <title>About Us - Digital Marketing Agency</title>
+    <link rel="stylesheet" href="css/styles.scss">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .team-card {
+            min-height: 100ch;
+            /* Set minimum height for cards */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Digital Marketing</a>
+            <a class="navbar-brand" href="index.html">Digital Marketing Agency</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,50 +44,100 @@
         </div>
     </nav>
 
-    <!-- About Us Content -->
-    <section class="py-5">
+    <!-- About Us Section -->
+    <section class="about py-5">
+        <div class="container text-center">
+            <h2 class="mb-5">About Us</h2>
+            <p class="mb-4">We are a team of passionate digital marketers dedicated to helping businesses grow online.
+                Our expertise spans across various areas of digital marketing, ensuring that we provide tailored
+                solutions to meet your unique needs.</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team py-5">
         <div class="container">
-            <h2 class="text-center">Meet Our Team</h2>
+            <h2 class="text-center mb-5">Meet Our Team</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <h5>CEO: Sapan Sharma</h5>
-                    <p>Leading our team with passion and expertise in digital strategy.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member1.jpg" class="card-img-top" alt="Team Member 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sapan Sharma</h5>
+                            <p class="card-text">CEO</p>
+                            <p class="card-text">Sapan is a visionary leader with a passion for digital marketing and a
+                                track record of driving successful campaigns.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Director: Manju Sharma & Saurabh Sharma</h5>
-                    <p>Driving growth with years of business and digital marketing experience.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member2.jpg" class="card-img-top" alt="Team Member 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Mohit Uphadhya</h5>
+                            <p class="card-text">Managing Director</p>
+                            <p class="card-text">Mohit brings years of experience in digital strategy and execution,
+                                helping clients achieve their marketing goals.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Managing Director: Mohit Uphadhya</h5>
-                    <p>Focused on bringing innovative strategies to market.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member3.jpg" class="card-img-top" alt="Team Member 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Bhavya Agrawal</h5>
+                            <p class="card-text">HR Head</p>
+                            <p class="card-text">Bhavya is responsible for fostering a positive workplace culture and
+                                ensuring our team is at its best.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>HR Head: Bhavya Agrawal</h5>
-                    <p>Managing talent and building a dynamic team culture.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member4.jpg" class="card-img-top" alt="Team Member 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Aditya Pachoriya</h5>
+                            <p class="card-text">Content Writer</p>
+                            <p class="card-text">Aditya crafts compelling content that resonates with audiences and
+                                drives engagement.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Finance Manager: FH Vidhi Basanwal</h5>
-                    <p>Ensuring financial success and sustainability for our clients and us.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member5.jpg" class="card-img-top" alt="Team Member 5">
+                        <div class="card-body">
+                            <h5 class="card-title">FH Vidhi Basanwal</h5>
+                            <p class="card-text">Finance Manager</p>
+                            <p class="card-text">Vidhi manages our financial operations, ensuring we are financially
+                                sound and sustainable.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Content Writer: Aditya Pachoriya</h5>
-                    <p>Creating compelling content to tell your brand's story.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card border rounded shadow p-3">
+                        <img src="path/to/team_member6.jpg" class="card-img-top" alt="Team Member 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Manju Sharma</h5>
+                            <p class="card-text">Director</p>
+                            <p class="card-text">Manju focuses on client relationships and ensures that we deliver
+                                exceptional service at all times.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p>&copy; 2024 Digital Marketing Agency. All rights reserved.</p>
-        </div>
+    <footer>
+        <p class="text-center py-3">&copy; 2024 Digital Marketing Agency. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
-    <script src="js/script.js"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
