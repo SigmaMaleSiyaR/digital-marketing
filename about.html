@@ -61,33 +61,6 @@
             padding: 20px 0;
         }
 
-        .timeline {
-            position: relative;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        .timeline-event {
-            position: relative;
-            margin: 2rem 0;
-            padding-left: 2rem;
-        }
-
-        .timeline-event:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 1.5rem;
-            height: 2px;
-            width: 1rem;
-            background: #343a40;
-        }
-
-        .timeline-event h5 {
-            margin-bottom: 0.5rem;
-            color: #343a40;
-        }
-
         /* Improved Card Design with Full-Width Image */
         .card {
             border: none;
@@ -117,7 +90,7 @@
             margin-top: 1rem;
             font-size: 1.25rem;
             font-weight: 600;
-            color: #343a40;
+            color: #007bff;
         }
 
         .team-card p {
@@ -132,7 +105,64 @@
             text-align: center;
             /* Ensures text is centered */
         }
+
+        /* Milestones Section Styling */
+        .milestones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .milestone-event {
+            width: 80%;
+            max-width: 600px;
+            background: #e3f2fd;
+            /* Light blue background */
+            border: 2px solid #2196f3;
+            /* Blue border */
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+            opacity: 0;
+            /* Start hidden */
+            transform: translateY(50px);
+            /* Initial position */
+            transition: all 0.6s ease-out;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+        }
+
+        /* Milestone Animation on Visibility */
+        .milestone-event.visible {
+            opacity: 1;
+            /* Show when visible */
+            transform: translateY(0);
+            /* Move to original position */
+        }
+
+        .milestone-event h5 {
+            color: #1976d2;
+            /* Darker blue for headings */
+            font-weight: bold;
+        }
+
+        .milestone-event p {
+            color: #424242;
+            /* Dark gray for text */
+            font-size: 1rem;
+        }
+
+
+        /* Milestone Animation on Visibility */
+        .milestone-event.visible {
+            opacity: 1;
+            /* Show when visible */
+            transform: translateY(0);
+            /* Move to original position */
+        }
     </style>
+
 
 
 </head>
@@ -185,30 +215,31 @@
         </div>
     </section>
 
-    <!-- History Timeline -->
+    <!-- Milestones Section -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Our History</h2>
-            <div class="timeline">
-                <div class="timeline-event">
-                    <h5>September 25, 2024</h5>
-                    <p>Uniment Solutions LLP was founded by Manju Sharma and Saurabh Sharma in Jaipur, India.</p>
+            <h2 class="text-center">Our Milestones</h2>
+            <div class="milestones">
+                <div class="milestone-event">
+                    <h5>2021</h5>
+                    <p>Established our first office in Jaipur.</p>
                 </div>
-                <div class="timeline-event">
-                    <h5>October 2024</h5>
-                    <p>Launched our first digital marketing campaigns for local businesses.</p>
+                <div class="milestone-event">
+                    <h5>2022</h5>
+                    <p>Served over 200 clients across various industries.</p>
                 </div>
-                <div class="timeline-event">
-                    <h5>January 2025</h5>
-                    <p>Expanded our service offerings to include PPC and content marketing.</p>
+                <div class="milestone-event">
+                    <h5>2023</h5>
+                    <p>Launched our proprietary marketing analytics platform.</p>
                 </div>
-                <div class="timeline-event">
-                    <h5>June 2025</h5>
-                    <p>Reached over 100 satisfied clients and recognized as a trusted agency in the region.</p>
+                <div class="milestone-event">
+                    <h5>2024</h5>
+                    <p>Recognized as a leading digital marketing agency in India.</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Meet Our Team -->
     <section class="section">
@@ -279,8 +310,33 @@
         integrity="sha384-PIV4xVNRW+5YX7p9uW5xO03pU1zJ3D7c6YTA3+uP4Y4tbE8GmMN3VFbI94hOVhUe"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-nw3dW0YXHtbD3w4xjD21Zt27o4xA5Avj0eX5rA5nUQ32+WwQTwWpeUCr9Sk2y/Bn"
-        crossorigin="anonymous"></script>
-</body>
+        integrity="sha384-nw3dW0YXHtbD3w4xjD21Zt27o4xA5Avj0eX5rA5nUQ32+WwQTwWpeUCr9Sk2y/Bn" crossorigin="anonymous">
+        </script>
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            // Scroll event for timeline animation
+            window.addEventListener('scroll', function () {
+                const timelineEvents = document.querySelectorAll('.timeline-event');
+                timelineEvents.forEach(event => {
+                    const eventPosition = event.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (eventPosition < screenPosition) {
+                        event.classList.add('visible');
+                    }
+                });
+
+                // Scroll event for milestone animation
+                const milestoneEvents = document.querySelectorAll('.milestone-event');
+                milestoneEvents.forEach(event => {
+                    const eventPosition = event.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (eventPosition < screenPosition) {
+                        event.classList.add('visible');
+                    }
+                });
+            });
+        });
+    </script>
 
 </html>
