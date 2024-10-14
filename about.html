@@ -165,6 +165,45 @@
             transform: translateY(0);
             /* Move to original position */
         }
+
+        /* Modal Image Styling */
+        .modal-body img {
+            max-width: 100%;
+            /* Ensure the image doesn't exceed the modal width */
+            height: auto;
+            /* Maintain aspect ratio */
+            width: 50%;
+            /* Set a specific width for the image */
+            display: block;
+            /* Center the image */
+            margin: 0 auto;
+            /* Center the image horizontally */
+        }
+
+        /* Styling for Name and Position in Modal */
+        #teamModalName {
+            font-size: 1.5rem;
+            /* Increase font size */
+            font-weight: bold;
+            /* Make it bold */
+            color: #007bff;
+            /* Add a primary color to make it stand out */
+            text-align: center;
+            /* Center the text */
+            margin-bottom: 0.5rem;
+        }
+
+        #teamModalPosition {
+            font-size: 1.2rem;
+            /* Slightly increase font size for position */
+            font-weight: 600;
+            /* Make it semi-bold */
+            color: #343a40;
+            /* Use a dark gray color for readability */
+            text-align: center;
+            /* Center the text */
+            margin-bottom: 1rem;
+        }
     </style>
 
 
@@ -185,7 +224,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -246,64 +285,113 @@
     </section>
 
 
-    <!-- Meet Our Team -->
     <section class="section">
         <div class="container">
             <h2 class="text-center">Meet Our Team</h2>
             <div class="row">
-
                 <div class="col-md-6 mb-4">
-                    <div class="team-card card p-3">
+                    <div class="team-card card p-3" onclick="openModal(0)">
                         <img src="images/mem1.jpg" alt="Manju Sharma">
                         <h5>Manju Sharma</h5>
                         <p>Board of Directors</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <div class="team-card card p-3">
-                        <img src="images/mem1.jpg" alt="Saurabh Sharma">
+                    <div class="team-card card p-3" onclick="openModal(1)">
+                        <img src="images/Members/Board1.jpg" alt="Saurabh Sharma">
                         <h5>Saurabh Sharma</h5>
                         <p>Board of Directors</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3">
+                    <div class="team-card card p-3" onclick="openModal(2)">
                         <img src="images/Members/CEO.png" alt="Sapan Sharma">
                         <h5>Sapan Sharma</h5>
                         <p>CEO</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3">
+                    <div class="team-card card p-3" onclick="openModal(3)">
                         <img src="images/Members/ManagingDirector.HEIC" alt="Mohit Sharma">
                         <h5>Mohit Sharma</h5>
                         <p>Managing Director</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3">
+                    <div class="team-card card p-3" onclick="openModal(4)">
                         <img src="images/Members/HeadHR.JPG" alt="Bhavya Agrawal">
                         <h5>Bhavya Agrawal</h5>
                         <p>Head of HR</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3">
-                        <img src="images/Members/FinanceExecutiveOfficer.JPG" alt="Vidhi Basanwal">
-                        <h5>Vidhi Basanwal</h5>
-                        <p>Finance Executive Officer</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3">
-                        <img src="images/Members/DataAnalyst.jpg" alt="Aditya Pachoriya">
-                        <h5>Aditya Pachoriya</h5>
-                        <p>Data Analyst</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+    <!-- Single Modal -->
+    <div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamModalLabel">Team Member - Thoughts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="teamModalImg" class="img-fluid" src="" alt="Team Member Photo">
+                    <h5 id="teamModalName"></h5>
+                    <p id="teamModalPosition"></p>
+                    <p id="teamModalThoughts"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Array of team member data
+        const teamMembers = [
+            {
+                name: "Manju Sharma",
+                position: "Board of Directors",
+                thoughts: "At Uniment Solutions, my vision is to help businesses grow through innovative digital strategies that are tailored to their unique needs.",
+                image: "images/mem1.jpg"
+            },
+            {
+                name: "Saurabh Sharma",
+                position: "Board of Directors",
+                thoughts: "We are focused on creating long-term value for our clients by consistently delivering results and adapting to the ever-changing digital landscape.",
+                image: "images/Members/Board1.jpg"
+            },
+            {
+                name: "Sapan Sharma",
+                position: "CEO",
+                thoughts: "As the CEO, I believe in leading by example and ensuring that our team stays ahead of trends to provide our clients with cutting-edge solutions.",
+                image: "images/Members/CEO.png"
+            },
+            {
+                name: "Mohit Sharma",
+                position: "Managing Director",
+                thoughts: "My goal as Managing Director is to ensure operational excellence and strategic growth, aligning our services with the evolving needs of our clients.",
+                image: "images/Members/ManagingDirector.HEIC"
+            },
+            {
+                name: "Bhavya Agrawal",
+                position: "Head of HR",
+                thoughts: "As Head of HR, I believe in nurturing a collaborative and inclusive work culture that empowers our team to perform at their best.",
+                image: "images/Members/HeadHR.JPG"
+            }
+        ];
+
+        // Function to open modal and populate with correct data
+        function openModal(index) {
+            // Set modal data
+            document.getElementById('teamModalName').innerText = teamMembers[index].name;
+            document.getElementById('teamModalPosition').innerText = teamMembers[index].position;
+            document.getElementById('teamModalThoughts').innerText = teamMembers[index].thoughts;
+            document.getElementById('teamModalImg').src = teamMembers[index].image;
+
+            // Show the modal
+            var teamModal = new bootstrap.Modal(document.getElementById('teamModal'));
+            teamModal.show();
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -344,5 +432,8 @@
             });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 
 </html>
