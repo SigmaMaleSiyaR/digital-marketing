@@ -54,13 +54,6 @@
             text-align: center;
         }
 
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
         /* Improved Card Design with Full-Width Image */
         .card {
             border: none;
@@ -138,12 +131,6 @@
         }
 
         /* Milestone Animation on Visibility */
-        .milestone-event.visible {
-            opacity: 1;
-            /* Show when visible */
-            transform: translateY(0);
-            /* Move to original position */
-        }
 
         .milestone-event h5 {
             color: #1976d2;
@@ -157,52 +144,61 @@
             font-size: 1rem;
         }
 
+        /* Default state: Hidden */
+        .milestone-event {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
 
-        /* Milestone Animation on Visibility */
+        /* Visible state: Shown when scrolled into view */
         .milestone-event.visible {
             opacity: 1;
-            /* Show when visible */
             transform: translateY(0);
-            /* Move to original position */
         }
 
-        /* Modal Image Styling */
-        .modal-body img {
-            max-width: 100%;
-            /* Ensure the image doesn't exceed the modal width */
-            height: auto;
-            /* Maintain aspect ratio */
-            width: 50%;
-            /* Set a specific width for the image */
-            display: block;
-            /* Center the image */
-            margin: 0 auto;
-            /* Center the image horizontally */
+
+        /* Milestone Animation on Visibility */
+        /* Card and hover effect */
+        .team-card {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Styling for Name and Position in Modal */
-        #teamModalName {
+        /* Image hover effect - darkens image */
+        .team-card:hover img {
+            filter: brightness(0.7);
+        }
+
+        /* Slight lift and shadow when hovering over the card */
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Overlay for "Click to Know More" */
+        .team-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 123, 255, 0.6);
+            /* Light blue transparent overlay */
+            color: white;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            /* Increase font size */
             font-weight: bold;
-            /* Make it bold */
-            color: #007bff;
-            /* Add a primary color to make it stand out */
-            text-align: center;
-            /* Center the text */
-            margin-bottom: 0.5rem;
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
         }
 
-        #teamModalPosition {
-            font-size: 1.2rem;
-            /* Slightly increase font size for position */
-            font-weight: 600;
-            /* Make it semi-bold */
-            color: #343a40;
-            /* Use a dark gray color for readability */
-            text-align: center;
-            /* Center the text */
-            margin-bottom: 1rem;
+        /* Overlay becomes visible on hover */
+        .team-card:hover .overlay {
+            opacity: 1;
         }
     </style>
 
@@ -285,120 +281,88 @@
     </section>
 
 
+    <!-- Meet Our Team -->
     <section class="section">
         <div class="container">
             <h2 class="text-center">Meet Our Team</h2>
             <div class="row">
+
                 <div class="col-md-6 mb-4">
-                    <div class="team-card card p-3" onclick="openModal(0)">
-                        <img src="images/mem1.jpg" alt="Manju Sharma">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/saurabh.html">
+                            <img src="images/mem1.jpg" alt="Manju Sharma">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
                         <h5>Manju Sharma</h5>
                         <p>Board of Directors</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <div class="team-card card p-3" onclick="openModal(1)">
-                        <img src="images/Members/Board1.jpg" alt="Saurabh Sharma">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/saurabh.html">
+                            <img src="images/Members/Board1.jpg" alt="Saurabh Sharma" class="img-fluid">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
                         <h5>Saurabh Sharma</h5>
                         <p>Board of Directors</p>
                     </div>
                 </div>
+
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3" onclick="openModal(2)">
-                        <img src="images/Members/CEO.png" alt="Sapan Sharma">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/saurabh.html">
+                            <img src="images/Members/CEO.png" alt="Sapan Sharma">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
                         <h5>Sapan Sharma</h5>
                         <p>CEO</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3" onclick="openModal(3)">
-                        <img src="images/Members/ManagingDirector.HEIC" alt="Mohit Sharma">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/saurabh.html">
+                            <img src="images/Members/ManagingDirector.HEIC" alt="Mohit Sharma">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
                         <h5>Mohit Sharma</h5>
                         <p>Managing Director</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="team-card card p-3" onclick="openModal(4)">
-                        <img src="images/Members/HeadHR.JPG" alt="Bhavya Agrawal">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/bhavya.html">
+                            <img src="images/Members/HeadHR.JPG" alt="Bhavya Agrawal">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
                         <h5>Bhavya Agrawal</h5>
                         <p>Head of HR</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/vidhi.html">
+                            <img src="images/Members/FinanceExecutiveOfficer.JPG" alt="Vidhi Basanwal">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
+                        <h5>Vidhi Basanwal</h5>
+                        <p>Finance Executive Officer</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="team-card card p-3">
+                        <a href="profilepages/aditya.html">
+                            <img src="images/Members/DataAnalyst.jpg" alt="Aditya Pachoriya">
+                            <div class="overlay">Click to Know More</div>
+                        </a>
+                        <h5>Aditya Pachoriya</h5>
+                        <p>Data Analyst</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Single Modal -->
-    <div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="teamModalLabel">Team Member - Thoughts</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="teamModalImg" class="img-fluid" src="" alt="Team Member Photo">
-                    <h5 id="teamModalName"></h5>
-                    <p id="teamModalPosition"></p>
-                    <p id="teamModalThoughts"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Array of team member data
-        const teamMembers = [
-            {
-                name: "Manju Sharma",
-                position: "Board of Directors",
-                thoughts: "At Uniment Solutions, my vision is to help businesses grow through innovative digital strategies that are tailored to their unique needs.",
-                image: "images/mem1.jpg"
-            },
-            {
-                name: "Saurabh Sharma",
-                position: "Board of Directors",
-                thoughts: "We are focused on creating long-term value for our clients by consistently delivering results and adapting to the ever-changing digital landscape.",
-                image: "images/Members/Board1.jpg"
-            },
-            {
-                name: "Sapan Sharma",
-                position: "CEO",
-                thoughts: "As the CEO, I believe in leading by example and ensuring that our team stays ahead of trends to provide our clients with cutting-edge solutions.",
-                image: "images/Members/CEO.png"
-            },
-            {
-                name: "Mohit Sharma",
-                position: "Managing Director",
-                thoughts: "My goal as Managing Director is to ensure operational excellence and strategic growth, aligning our services with the evolving needs of our clients.",
-                image: "images/Members/ManagingDirector.HEIC"
-            },
-            {
-                name: "Bhavya Agrawal",
-                position: "Head of HR",
-                thoughts: "As Head of HR, I believe in nurturing a collaborative and inclusive work culture that empowers our team to perform at their best.",
-                image: "images/Members/HeadHR.JPG"
-            }
-        ];
 
-        // Function to open modal and populate with correct data
-        function openModal(index) {
-            // Set modal data
-            document.getElementById('teamModalName').innerText = teamMembers[index].name;
-            document.getElementById('teamModalPosition').innerText = teamMembers[index].position;
-            document.getElementById('teamModalThoughts').innerText = teamMembers[index].thoughts;
-            document.getElementById('teamModalImg').src = teamMembers[index].image;
 
-            // Show the modal
-            var teamModal = new bootstrap.Modal(document.getElementById('teamModal'));
-            teamModal.show();
-        }
-    </script>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Uniment Solutions LLP. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-PIV4xVNRW+5YX7p9uW5xO03pU1zJ3D7c6YTA3+uP4Y4tbE8GmMN3VFbI94hOVhUe"
@@ -406,7 +370,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-nw3dW0YXHtbD3w4xjD21Zt27o4xA5Avj0eX5rA5nUQ32+WwQTwWpeUCr9Sk2y/Bn" crossorigin="anonymous">
         </script>
-    <script>document.addEventListener('DOMContentLoaded', function () {
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             // Scroll event for timeline animation
             window.addEventListener('scroll', function () {
                 const timelineEvents = document.querySelectorAll('.timeline-event');
@@ -432,8 +399,11 @@
             });
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Uniment Solutions LLP. All rights reserved.</p>
+    </div>
+</footer>
 
 </html>
