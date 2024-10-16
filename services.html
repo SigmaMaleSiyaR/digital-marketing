@@ -59,6 +59,30 @@
             border-radius: 50%;
         }
     </style>
+    <style>
+        /* Modal Background Color */
+        .modal-content {
+            background-color: #ffffff;
+            /* White background for better contrast */
+            color: #333;
+            /* Darker text color */
+        }
+
+        /* Modal Header Styles */
+        .modal-header {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            /* White text for the header */
+        }
+
+        /* Modal Body Styles */
+        .modal-body {
+            font-size: 16px;
+            /* Slightly larger font size for better readability */
+        }
+    </style>
+
     <link rel="stylesheet" href="css/styles.scss">
 </head>
 
@@ -96,6 +120,8 @@
                         <img src="images/seo.jpg" alt="Service 1" class="img-fluid">
                         <h5>Search Engine Optimization (SEO)</h5>
                         <p>Improve your website's visibility on search engines and attract organic traffic.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#seoModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -103,6 +129,8 @@
                         <img src="images/socialmedia.png" alt="Service 2" class="img-fluid">
                         <h5>Social Media Marketing</h5>
                         <p>Engage your audience on social platforms and build brand awareness.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#socialMediaModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -110,6 +138,8 @@
                         <img src="images/content marketingjpg.jpg" alt="Service 3" class="img-fluid">
                         <h5>Content Marketing</h5>
                         <p>Create compelling content that attracts and retains customers.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#contentMarketingModal">Learn More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -117,6 +147,8 @@
                         <img src="images/email.png" alt="Service 4" class="img-fluid">
                         <h5>Email Marketing</h5>
                         <p>Reach your customers directly in their inbox and nurture leads.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#emailMarketingModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -124,6 +156,8 @@
                         <img src="images/ppc.png" alt="Service 5" class="img-fluid">
                         <h5>Pay-Per-Click Advertising</h5>
                         <p>Drive targeted traffic to your website through paid ads.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ppcModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -131,6 +165,8 @@
                         <img src="images/webdevelopment.png" alt="Service 6" class="img-fluid">
                         <h5>Web Development</h5>
                         <p>Create stunning, responsive websites that reflect your brand.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#webDevelopmentModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -138,6 +174,8 @@
                         <img src="images/brand.png" alt="Service 7" class="img-fluid">
                         <h5>Brand Strategy</h5>
                         <p>Define your brand's direction and establish a strong market presence.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#brandStrategyModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -145,6 +183,8 @@
                         <img src="images/influencer.jpg" alt="Service 8" class="img-fluid">
                         <h5>Influencer Marketing</h5>
                         <p>Collaborate with influencers to expand your reach and credibility.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal"
+                            data-bs-target="#influencerMarketingModal">Learn More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -152,6 +192,8 @@
                         <img src="images/video.png" alt="Service 9" class="img-fluid">
                         <h5>Video Marketing</h5>
                         <p>Utilize engaging videos to capture your audience's attention.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#videoMarketingModal">Learn
+                            More</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -159,6 +201,8 @@
                         <img src="images/analytics.jpg" alt="Service 10" class="img-fluid">
                         <h5>Analytics and Reporting</h5>
                         <p>Measure your marketing efforts with comprehensive analytics and insights.</p>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#analyticsModal">Learn
+                            More</button>
                     </div>
                 </div>
             </div>
@@ -173,6 +217,164 @@
             <a href="contact.html" class="btn btn-primary">Get Started</a>
         </div>
     </section>
+
+    <!-- Modals for Each Service -->
+    <div class="modal fade" id="seoModal" tabindex="-1" aria-labelledby="seoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seoModalLabel">Search Engine Optimization (SEO)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Our SEO service focuses on improving your website's ranking on search engines, driving more
+                        organic traffic, and enhancing visibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="socialMediaModal" tabindex="-1" aria-labelledby="socialMediaModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="socialMediaModalLabel">Social Media Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Engage your audience on various social media platforms, create brand awareness, and foster
+                        community through strategic marketing efforts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contentMarketingModal" tabindex="-1" aria-labelledby="contentMarketingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contentMarketingModalLabel">Content Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Create compelling content that attracts, engages, and retains your target audience, driving
+                        profitable customer action.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="emailMarketingModal" tabindex="-1" aria-labelledby="emailMarketingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailMarketingModalLabel">Email Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Reach your customers directly through email campaigns, nurturing leads and enhancing customer
+                        relationships.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ppcModal" tabindex="-1" aria-labelledby="ppcModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ppcModalLabel">Pay-Per-Click Advertising</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Utilize targeted pay-per-click ads to drive immediate traffic to your website, optimizing for
+                        maximum ROI.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="webDevelopmentModal" tabindex="-1" aria-labelledby="webDevelopmentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="webDevelopmentModalLabel">Web Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Build responsive, user-friendly websites tailored to your brand’s needs, ensuring a seamless user
+                        experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="brandStrategyModal" tabindex="-1" aria-labelledby="brandStrategyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="brandStrategyModalLabel">Brand Strategy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Develop a clear brand strategy to define your market position, engage customers, and drive
+                        business growth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="influencerMarketingModal" tabindex="-1" aria-labelledby="influencerMarketingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="influencerMarketingModalLabel">Influencer Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Partner with influential personalities in your niche to reach a broader audience and enhance
+                        brand credibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoMarketingModal" tabindex="-1" aria-labelledby="videoMarketingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoMarketingModalLabel">Video Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Engage your audience through creative video content that drives higher engagement and retention.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="analyticsModal" tabindex="-1" aria-labelledby="analyticsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="analyticsModalLabel">Analytics and Reporting</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Utilize data analytics to track performance, gain insights, and make informed marketing
+                        decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
