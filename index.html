@@ -2,387 +2,530 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Services - Thrive Agency</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-        }
+    <meta charset="utf-8">
+    <title>Startup - Startup Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-        /* Header styling with background image */
-        header {
-            background-image: url('https://img.freepik.com/premium-photo/silhouette-man-working-his-desk_1155284-11859.jpg?w=1060');
-            background-size: cover;
-            background-position: center;
-            height: calc(100vh - 56px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-        /* Overlay for better readability */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-        header .hero-text {
-            z-index: 1;
-        }
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-        }
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
 
-        header p {
-            font-size: 1.5rem;
-            font-weight: 400;
-        }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        /* Service Section */
-        .service-section {
-            padding: 60px 0;
-        }
-
-        .service-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            transition: transform 0.2s;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-
-        .service-card img {
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            max-height: 200px;
-            object-fit: cover;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background-color: #007bff;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 500;
-        }
-
-        .cta-section p {
-            font-size: 1.25rem;
-        }
-
-        .cta-section .btn {
-            font-size: 1.25rem;
-            padding: 10px 30px;
-        }
-
-        /* Testimonial Section */
-        .testimonial-section {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-        }
-
-        .testimonial-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-        }
-    </style>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Digital Marketing</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid p-0">
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0"> -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Digital Marketing</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- </nav> -->
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital
+                                Solution</h1>
+
+                            <a href="contact.html"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital
+                                Solution</h1>
+                            <!-- <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
+                                Quotec</a> -->
+                            <a href="contact.html"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </nav>
+    </div>
+    <!-- Navbar & Carousel End -->
 
-    <!-- Hero Section -->
-    <header>
-        <div class="container">
-            <div class="hero-text">
-                <h1>Digital Marketing Services</h1>
-                <p>Grow your business with our expert solutions</p>
-                <a href="contact.html" class="btn btn-primary btn-lg mt-3">Get Started</a>
-            </div>
-        </div>
-    </header>
 
-    <!-- About Digital Marketing Section -->
-    <section class="about-section">
-        <div class="container">
-            <h2 class="text-center mb-5">About Digital Marketing</h2>
-            <div class="row align-items-center">
-                <div class="col-md-6 fs-4">
-                    <p>
-                        Digital marketing encompasses all marketing efforts that use the internet or an electronic
-                        device. Businesses leverage digital channels such as search engines, social media, email, and
-                        other websites to connect with current and prospective customers.
-                    </p>
-                    <p>
-                        From SEO and content marketing to social media and PPC campaigns, we tailor our services to help
-                        you navigate the digital landscape and achieve your business goals.
-                    </p>
+    <!-- Full Screen Search Start -->
+    <!-- <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-                <div class="col-md-6">
-                    <img src="https://plus.unsplash.com/premium_photo-1661372012626-90b9e5001cea?q=80&w=1785&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Digital Marketing" class="img-fluid rounded">
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div> -->
+    <!-- Full Screen Search End -->
 
-    <section class="section service" id="service" aria-label="service">
-        <div class="container">
 
-            <p class="section-subtitle has-before text-center">Our Services</p>
-
-            <h2 class="h2 section-title text-center">Manage your business with our <span class="has-before">best
-                    Services</span></h2>
-
-            <ul class="grid-list">
-
-                <li>
-                    <div class="service-card" style="--color: 174, 77%, 50%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV867JDTYsQcuVJ-B0AVjKWJfA4WRuzBOjQogtr1EF2vLgZzmieiNKJEpuTDiTA3y9xHc1szQWk3kUxjKMkUS6Db0m0bL-F9EX8ZlAjOSRNYhCeA53Q=s30-p-k?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-primary"></i>
                         </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Product Management</a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 267, 76%, 57%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV84RO-O_jmWxhPiVwhdlYIdxPnQPbxJeyJDD9LgXC_5MrrhOwy6sAfbDzcd_V9XoHPRVHx-U_ObhCFWsH4q7bT8WhhhWy59WBzl28Ho-qiBq8V0pAA=s30-p-k?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Happy Clients</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">99+</h1>
                         </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Web &amp; Mobile Development</a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 17, 100%, 68%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV869-BLTCaNnVwIYJ2Q1cF1Nuh-VKBz9VdcTlQg6oMIJpTtLdP4qeIJ0pi23eB13eTMt8sW3AQtByjiyDUKSRrRFa3ADicdHX1K8TdWgvLaYeFnA6g=s30-p-k?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
-                        </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Fast Customer Support</a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 343, 98%, 60%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV85qBPwXYn2i-uOb2TZ3CtTVgo9cJ6iKCAY8YOxTZSWyPV2LBGXzU0h88KHTCXOQQM9Qvt-nRlWItwad0z0D564LjrB-f-L85vDB7dQzBeuZyLg8Ug=w2400?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
-                        </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Hackathons, Webinars and Workshops </a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 210, 100%, 53%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV86jV18qfCn8eZc6QKY-FCxgOfRZQNWzSKXz_8zeWf9zBuaBTwsFs-PNVfMSYxL3mTtm_QUQP5TaGrleM8spSZZ9XTs-82JBfPJ4PRIDBbyRhCvY1Q=w2400?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
-                        </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">SocialMedia Handling </a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 157, 89%, 44%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV86LIr6S-wfsCIpTyMP1I3QG7daEo7MkSmFQWBFTh1TpObp3bOnSBL6Xrcr6VAj9fTYooSVLXsAKUFMhUf5mttX_OkAw_R_9a1kvArnO2gLm5uehUQ=s30-p-k?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
-                        </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Marketing and Communication</a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="service-card" style="--color: 52, 98%, 50%">
-
-                        <div class="card-icon">
-                            <img src="https://lh3.googleusercontent.com/pw/ABLVV87LW4YqEb9LY68fMm_7jvSpzgxtBai413g1Kqagto7NVK7fPN11lozHzCQ8X9QaLi90kYHqja2n4MB3oqFKSmiJv9ZyCaJfJB2opFlIWcNjKj0Bjg=s30-p-k?source=screenshot.guru"
-                                width="30" height="30" loading="lazy" alt="service icon">
-                        </div>
-
-                        <h3 class="h3">
-                            <a class="card-title">Business Development</a>
-                        </h3>
-
-                    </div>
-                </li>
-
-                <!--  <li>
-          <a href="#" class="link-card" style="--color: 203, 97%, 75%">
-            <span class="span">04 More Service</span>
-
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
-        </li>-->
-            </ul>
-
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="service-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Our Services</h2>
-            <div class="row">
-                <!-- Service Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card p-3">
-                        <img src="https://img.freepik.com/free-vector/social-media-marketing-illustration_114360-2020.jpg"
-                            alt="Social Media Marketing" class="img-fluid">
-                        <h4 class="mt-3">Social Media Marketing</h4>
-                        <p>Boost your brand's presence on social media platforms. We create engaging content and
-                            strategies to connect with your audience.</p>
-                        <a href="contact.html" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
-                <!-- Additional service cards here -->
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Contact us today and let's get started with your digital marketing journey.</p>
-            <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
-        <div class="container">
-            <h2 class="text-center mb-5">What Our Clients Say</h2>
-            <div class="row">
-                <!-- Testimonial 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="testimonial-card">
-                        <p>"Thrive Agency helped us reach new heights with their expert SEO services. We've seen
-                            tremendous growth in our online presence!"</p>
-                        <p><strong>- John Doe, CEO of Tech Innovators</strong></p>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Projects Done</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">200+</h1>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Additional testimonials here -->
-
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-award text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Win Awards</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">5</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <a class="connect" id="whats-app"
-            href="https://wa.me/919405528955?text=Welcome%20to%20Uniment%20Services!%20How%20can%20we%20assist%20you%3F"
-            target="_blank"
-            style="position:fixed; bottom:120px; right:20px; background-color:#25d366; color:white; padding:0 10px; border-radius:50%; font-size:25px; z-index:1000;">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        </a>
-
-        <a class="connect" id="insta" href="
-        https://www.instagram.com/the_mohitupadhyay/" target="_blank"
-            style="position:fixed; bottom:70px; right:20px; background-color:#C13584; color:white; padding:0 10px; border-radius:50%; font-size:25px; z-index:1000;">
-            <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
+    </div>
+    <!-- Facts Start -->
 
 
-    </section>
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">The Best IT Solution With 10 Years of Experience</h1>
+                    </div>
+                    <p class="mb-4">With 10 years of experience, we provide tailored IT solutions that drive business
+                        growth and innovation. Our expertise spans from software development to cloud services, ensuring
+                        seamless integration and maximum efficiency. We are committed to delivering excellence, helping
+                        clients stay ahead in the evolving digital landscape.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Award Winning</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Professional Staff</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>24/7 Support</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Fair Prices</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question <a href="tel:+91 707353691">707353691</a></h5>
+                            <h4 class="text-primary mb-0"></h4>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
+                        data-wow-delay="0.9s">Request
+                        A Meet</a>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                            src="img/about.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
+                <h1 class="mb-0">We Are Here to Grow Your Business Exponentially</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-cubes text-white"></i>
+                            </div>
+                            <h4>Best In Industry</h4>
+                            <p class="mb-0"> Our commitment to excellence and cutting-edge technology makes us the
+                                trusted choice for businesses aiming to thrive in the digital world.</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-award text-white"></i>
+                            </div>
+                            <h4>Award Winning</h4>
+                            <p class="mb-0">Recognized, accomplished, award-winning, industry-leading, innovative, and
+                                results-oriented professionals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s"
+                            src="img/feature.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-users-cog text-white"></i>
+                            </div>
+                            <h4>Professional Staff</h4>
+                            <p class="mb-0">Skilled, innovative, reliable, client-focused, experienced, dedicated, and
+                                results-driven.</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-phone-alt text-white"></i>
+                            </div>
+                            <h4>24/7 Support</h4>
+                            <p class="mb-0">Reliable, responsive, dedicated, round-the-clock, accessible,
+                                customer-focused support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Start -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-shield-alt text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Cyber Security</h4>
+                        <p class="m-0">Robust, proactive, reliable, secure, comprehensive, innovative cyber security
+                            solutions.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-pie text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Data Analytics</h4>
+                        <p class="m-0">Insightful, actionable, data-driven, strategic, predictive, and comprehensive
+                            analytics solutions.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-code text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Web Development</h4>
+                        <p class="m-0">Dynamic, responsive, user-friendly, customized, innovative, and scalable web
+                            development solutions.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fab fa-android text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Apps Development</h4>
+                        <p class="m-0">Intuitive, innovative, scalable, user-centric, cross-platform, and secure app
+                            development solutions.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-search text-white"></i>
+                        </div>
+                        <h4 class="mb-3">SEO Optimization</h4>
+                        <p class="m-0">Effective, targeted, data-driven, organic, strategic, and results-oriented SEO
+                            optimization.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                        <h3 class="text-white mb-3">Need support?</h3>
+                        <p class="text-white mb-3">Reach us at</p>
+                        <h2 class="text-white mb-0"><a style="color: aliceblue; font-size: medium;"
+                                href="mailto:unimentsolutionsllp@gmail.com">unimentsolutionsllp@gmail.com</h2></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
 
 
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3">
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div
+                        class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>Startup</h1>
+                        </a>
+                        <p class="mt-3 mb-4">With a decade of expertise, we provide tailored IT solutions that enhance
+                            productivity, security, and growth for businesses of all sizes.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                <button class="btn btn-dark">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">VT Road, Mansarovar, Jaipur, India</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">unimentsolutionsllp@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+91 707353691</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="#"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="#"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                                <a class="text-light" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Popular Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <a class="text-light mb-2" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                                <a class="text-light" href="#"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
         <div class="container text-center">
-            <p>&copy; 2024 Digital Marketing Agency. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All
+                            Rights Reserved.
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </p>
+                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com"
+                            target="_blank">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
