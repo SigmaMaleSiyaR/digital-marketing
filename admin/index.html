@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Platform</title>
+    <title>Uniment Solution LLP - Admin Panel</title>
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -12,28 +12,83 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
     <style>
+      body {
+        background-color: #f8f9fa;
+      }
       .warning-box {
         background-color: #fff3cd;
         border: 1px solid #ffeeba;
         color: #856404;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       }
       .developer-info {
-        background-color: #f8f9fa;
+        background-color: #ffffff;
         border: 1px solid #dee2e6;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
         text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+      .krishna-blessing {
+        background: linear-gradient(135deg, #e8f4f8 0%, #d1e7f0 100%);
+        border: 1px solid #b8daff;
+        padding: 25px;
+        border-radius: 10px;
+        margin: 30px 0;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+      .krishna-blessing h3 {
+        color: #004085;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      .krishna-blessing p {
+        color: #004085;
+        font-size: 1.1em;
+        margin-bottom: 0;
+      }
+      .company-intro {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 1px solid #dee2e6;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 30px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+      .company-intro h2 {
+        color: #1a237e;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .company-intro p {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+      .nav-link {
+        font-weight: 500;
+      }
+      .navbar {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1.4em;
+      }
+      .container {
+        max-width: 1000px;
       }
     </style>
   </head>
   <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Blog Platform</a>
+        <a class="navbar-brand" href="#">Uniment Solution LLP</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -64,8 +119,23 @@
         <p class="mb-0">Please do not share your admin credentials with anyone. Keep your password secure and change it regularly.</p>
       </div>
 
-      <div class="row" id="blogGrid">
-        <!-- Blog posts will be dynamically inserted here -->
+      <div class="company-intro">
+        <h2>Welcome to Uniment Solution LLP</h2>
+        <p>Uniment Solution LLP is a leading digital marketing and technology solutions provider, dedicated to helping businesses grow in the digital age. Our comprehensive services include:</p>
+        <ul>
+          <li>Digital Marketing Strategy</li>
+          <li>Search Engine Optimization (SEO)</li>
+          <li>Social Media Management</li>
+          <li>Content Marketing</li>
+          <li>Web Development</li>
+          <li>E-commerce Solutions</li>
+        </ul>
+        <p>This admin panel provides you with the tools to manage your digital presence effectively. From creating engaging blog content to monitoring customer messages, you have complete control over your digital assets.</p>
+      </div>
+
+      <div class="krishna-blessing">
+        <h3>🙏 With the Blessings of Lord Krishna 🙏</h3>
+        <p>May the divine grace of Lord Krishna guide us in our journey of knowledge and wisdom.</p>
       </div>
 
       <div class="developer-info">
@@ -80,6 +150,5 @@
     <!-- Custom JS -->
     <script type="module" src="auth.js"></script>
     <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="app.js"></script>
   </body>
 </html>
