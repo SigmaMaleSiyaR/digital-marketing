@@ -4,35 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Blog - Digital Marketing Services</title>
+    <title>Blog - Uniment Solution LLP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f6f9;
         }
 
-        /* Change wallpaper */
         header {
-            padding-top: 30px;
-            ;
-            background-position: center;
-            /* height: calc(50vh - 56px); */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: black;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
             text-align: center;
         }
 
         header h1 {
             font-size: 3rem;
             font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .blog-section {
-            /* padding: 60px 0; */
+            padding: 60px 0;
             background-color: #f8f9fa;
             min-height: calc(70vh - 52px);
         }
@@ -40,11 +36,11 @@
         .blog-card {
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             background-color: #fff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            /* margin-bottom: 1.25rem; */
+            margin-bottom: 30px;
+            overflow: hidden;
         }
 
         .blog-card:hover {
@@ -53,51 +49,68 @@
         }
 
         .blog-card .card-body {
-            padding: 0;
+            padding: 20px;
+        }
+
+        .blog-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
         .author-info {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
 
-        .author-img {
-            width: 40px;
-            height: 40px;
+        .author-logo {
+            width: 50px;
+            height: 50px;
+            background: #1a237e;
             border-radius: 50%;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         .author-details {
-            margin-left: 10px;
+            margin-left: 15px;
         }
 
         .author-details span {
-            font-weight: 500;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a237e;
         }
 
         .author-details .text-muted {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .blog-post-title {
             font-weight: 700;
-            font-size: 1.25rem;
-            color: #333;
+            font-size: 1.4rem;
+            color: #1a237e;
             text-decoration: none;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .blog-post-title:hover {
-            text-decoration: underline;
-            color: #007bff;
+            color: #0d47a1;
         }
 
         .card-text {
-            margin-top: 10px;
             color: #555;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .loader {
@@ -106,18 +119,37 @@
             align-items: center;
             height: 70vh;
         }
-    </style>
-    <link href="css/style.css" rel="stylesheet">
 
+        .read-more {
+            color: #1a237e;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .read-more:hover {
+            color: #0d47a1;
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Digital Marketing</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">Uniment Solution LLP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -137,15 +169,15 @@
     <header>
         <div class="container">
             <h1>Our Blog</h1>
-            <p>Stay updated with the latest in digital marketing</p>
+            <p>Insights and Updates from Uniment Solution LLP</p>
         </div>
     </header>
+
     <div id="loader" class="loader">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-
 
     <!-- Blog Section -->
     <section class="blog-section" id="blog-section" style="display:none;">
@@ -159,138 +191,65 @@
     <!-- Footer -->
     <footer class="bg-dark text-white py-3">
         <div class="container text-center">
-            <p>&copy; 2024 Digital Marketing Agency. All rights reserved.</p>
+            <p>&copy; 2024 Uniment Solution LLP. All rights reserved.</p>
         </div>
     </footer>
-    <!-- script for loader -->
-    <!-- <script>
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("blog-section").style.display = "block";
-
-    </script> -->
-    <!-- ========================= -->
-    <!-- script for blog fetch -->
-    <script>
-        const apiKey = "AIzaSyBEGcJMviEcWu5rbgc4FhGPU8r8OAgkTY0";
-
-        function getBlogPosts() {
-            const blogIds = ["533089351725742469", "5207560492914432337"]; // Add more Blog IDs here
-            const blogPostsContainer = document.getElementById("blog-posts");
-            blogPostsContainer.innerHTML = "";
-
-            // Create an array of fetch promises
-            const fetchPromises = blogIds.map(blogId => {
-                const url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}`;
-                return fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.items && data.items.length > 0) {
-                            return data.items; // Return posts if available
-                        }
-                        return []; // Return empty array if no posts
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        return []; // Return empty array in case of an error
-                    });
-            });
-
-            // Wait for all fetch promises to complete
-            Promise.all(fetchPromises)
-                .then(results => {
-                    const allPosts = results.flat(); // Combine all posts from all blogs
-
-                    if (allPosts.length > 0) {
-                        allPosts.forEach(post => {
-                            // Create blog post card element
-                            const blogPost = document.createElement("div");
-                            blogPost.classList.add("col-md-4", "mb-4");
-
-                            const card = document.createElement("div");
-                            card.classList.add("card", "blog-card", "h-100");
-
-                            const cardBody = document.createElement("div");
-                            cardBody.classList.add("card-body");
-
-                            // Post title
-                            const titleLink = document.createElement("a");
-                            titleLink.href = post.url;
-                            titleLink.classList.add("blog-post-title");
-                            titleLink.textContent = post.title;
-
-                            // Author information
-                            const authorInfo = document.createElement("div");
-                            authorInfo.classList.add("author-info");
-
-                            const authorImg = document.createElement("img");
-                            authorImg.src = post.author.image.url;
-                            authorImg.alt = post.author.displayName;
-                            authorImg.classList.add("author-img");
-
-                            const authorDetails = document.createElement("div");
-                            authorDetails.classList.add("author-details");
-                            const authorName = document.createElement("span");
-                            authorName.textContent = post.author.displayName;
-
-                            const postDate = document.createElement("div");
-                            postDate.classList.add("text-muted");
-                            const date = new Date(post.published);
-                            postDate.textContent = `Published on: ${date.toLocaleDateString()}`;
-
-                            authorDetails.appendChild(authorName);
-                            authorDetails.appendChild(postDate);
-                            authorInfo.appendChild(authorImg);
-                            authorInfo.appendChild(authorDetails);
-
-                            // Add author and title to the card
-                            cardBody.appendChild(authorInfo);
-                            cardBody.appendChild(titleLink);
-
-                            // Show a quick excerpt from the post (load the text first)
-                            const excerpt = document.createElement("p");
-                            excerpt.classList.add("card-text");
-
-                            // Create a temporary div to extract text content
-                            const tempDiv = document.createElement("div");
-                            tempDiv.innerHTML = post.content;
-                            const textContent = tempDiv.textContent || tempDiv.innerText || "";
-                            excerpt.textContent = textContent.slice(0, 250) + "...";
-
-                            cardBody.appendChild(excerpt);
-                            card.appendChild(cardBody);
-                            blogPost.appendChild(card);
-
-                            blogPostsContainer.appendChild(blogPost);
-                        });
-
-                        // Hide loader and show blog section after text content is loaded
-                        document.getElementById("loader").style.display = "none";
-                        document.getElementById("blog-section").style.display = "block";
-                    } else {
-                        const message = document.createElement("p");
-                        message.textContent = "No blog posts found.";
-                        blogPostsContainer.appendChild(message);
-                        // Hide loader if there are no posts
-                        document.getElementById("loader").style.display = "none";
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                    const message = document.createElement("p");
-                    message.textContent = "Error fetching blog posts.";
-                    document.getElementById("blog-posts").appendChild(message);
-                    // Hide loader if there's an error
-                    document.getElementById("loader").style.display = "none";
-                });
-        }
-
-        // Trigger blog fetching
-        getBlogPosts();
-    </script>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { db } from './admin/firebase-config.js';
+        import { collection, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+        async function loadBlogs() {
+            try {
+                const blogsQuery = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
+                const querySnapshot = await getDocs(blogsQuery);
+                const blogPostsContainer = document.getElementById("blog-posts");
+                blogPostsContainer.innerHTML = "";
+
+                querySnapshot.forEach((doc) => {
+                    const blog = doc.data();
+                    const date = blog.createdAt ? new Date(blog.createdAt.toDate()).toLocaleDateString() : 'N/A';
+                    
+                    const blogCard = `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="blog-card">
+                                ${blog.thumbnailURL ? `<img src="${blog.thumbnailURL}" class="blog-thumbnail" alt="${blog.title}">` : ''}
+                                <div class="card-body">
+                                    <div class="author-info">
+                                        <div class="author-logo">U</div>
+                                        <div class="author-details">
+                                            <span>Uniment</span>
+                                            <div class="text-muted">${date}</div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="blog-post-title">${blog.title}</a>
+                                    <p class="card-text">${blog.content.substring(0, 150)}...</p>
+                                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    blogPostsContainer.innerHTML += blogCard;
+                });
+
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("blog-section").style.display = "block";
+            } catch (error) {
+                console.error("Error loading blogs:", error);
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("blog-section").style.display = "block";
+                document.getElementById("blog-posts").innerHTML = `
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Error loading blogs. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load blogs when the page loads
+        window.addEventListener('load', loadBlogs);
+    </script>
 </body>
 
 </html>
