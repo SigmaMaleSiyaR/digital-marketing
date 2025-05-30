@@ -214,10 +214,20 @@
             try {
                 // Create user in Firebase Auth
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
                 
-                // Add admin to Firestore
+                // Add to users collection
+                await addDoc(collection(db, 'users'), {
+                    email: email,
+                    uid: user.uid,
+                    role: 'admin',
+                    createdAt: new Date()
+                });
+                
+                // Add to admins collection
                 await addDoc(collection(db, 'admins'), {
                     email: email,
+                    uid: user.uid,
                     role: 'Admin',
                     createdAt: new Date()
                 });
@@ -240,7 +250,28 @@
                 const adminDoc = await getDocs(query(collection(db, 'admins'), where('__name__', '==', currentAdminId)));
                 const adminData = adminDoc.docs[0].data();
 
-                // Delete from Firestore
+                // Get the user from Firebase Auth using email
+                const userQuery = query(collection(db, 'users'), where('email', '==', adminData.email));
+                const userSnapshot = await getDocs(userQuery);
+                
+                if (!userSnapshot.empty) {
+                    const userDoc = userSnapshot.docs[0];
+                    const userData = userDoc.data();
+                    
+                    // Delete from Firebase Auth
+                    if (userData.uid) {
+                        try {
+                            await deleteUser(auth.currentUser);
+                        } catch (error) {
+                            console.error("Error deleting user from Auth:", error);
+                        }
+                    }
+                    
+                    // Delete from users collection
+                    await deleteDoc(doc(db, 'users', userDoc.id));
+                }
+
+                // Delete from admins collection
                 await deleteDoc(doc(db, 'admins', currentAdminId));
 
                 deleteAdminModal.hide();
