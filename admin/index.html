@@ -11,6 +11,24 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        color: #856404;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .developer-info {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/admin/index.html">Home</a>
+              <a class="nav-link active" href="/admin/index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/admin/create-blog.html">Create Blog</a>
@@ -41,13 +59,24 @@
     </header>
 
     <div class="container mt-4">
+      <div class="warning-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Security Warning</h4>
+        <p class="mb-0">Please do not share your admin credentials with anyone. Keep your password secure and change it regularly.</p>
+      </div>
+
       <div class="row" id="blogGrid">
         <!-- Blog posts will be dynamically inserted here -->
+      </div>
+
+      <div class="developer-info">
+        <p class="mb-0">Developed by <strong>Siya Ram</strong></p>
       </div>
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script type="module" src="auth.js"></script>
     <script type="module" src="firebase-config.js"></script>
