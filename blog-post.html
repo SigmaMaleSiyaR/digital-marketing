@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Uniment Solution LLP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .blog-header {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .author-logo {
+            width: 50px;
+            height: 50px;
+            background: #1a237e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-details {
+            margin-left: 15px;
+        }
+
+        .author-details span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a237e;
+        }
+
+        .author-details .text-muted {
+            font-size: 0.9rem;
+        }
+
+        .blog-thumbnail {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .blog-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .blog-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-text img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .back-to-blog {
+            color: #1a237e;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .back-to-blog i {
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+
+        .back-to-blog:hover {
+            color: #0d47a1;
+        }
+
+        .back-to-blog:hover i {
+            transform: translateX(-5px);
+        }
+
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Uniment Solution LLP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="loader" class="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div id="blog-content" style="display: none;">
+        <div class="blog-header">
+            <div class="container">
+                <h1 id="blog-title">Loading...</h1>
+            </div>
+        </div>
+
+        <div class="blog-content">
+            <div class="container">
+                <a href="blog.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+                <div class="blog-meta">
+                    <div class="author-logo">U</div>
+                    <div class="author-details">
+                        <span>Uniment</span>
+                        <div class="text-muted" id="blog-date">Loading...</div>
+                    </div>
+                </div>
+                <img id="blog-thumbnail" class="blog-thumbnail" src="" alt="">
+                <div class="blog-text" id="blog-text">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Uniment Solution LLP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { db } from './admin/firebase-config.js';
+        import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+        async function loadBlogPost() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const blogId = urlParams.get('id');
+
+                if (!blogId) {
+                    window.location.href = 'blog.html';
+                    return;
+                }
+
+                const docRef = doc(db, 'blogs', blogId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const blog = docSnap.data();
+                    const date = blog.createdAt ? new Date(blog.createdAt.toDate()).toLocaleDateString() : 'N/A';
+
+                    document.title = `${blog.title} - Uniment Solution LLP`;
+                    document.getElementById('blog-title').textContent = blog.title;
+                    document.getElementById('blog-date').textContent = date;
+                    document.getElementById('blog-text').innerHTML = blog.content;
+
+                    if (blog.thumbnailURL) {
+                        document.getElementById('blog-thumbnail').src = blog.thumbnailURL;
+                    } else {
+                        document.getElementById('blog-thumbnail').style.display = 'none';
+                    }
+
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('blog-content').style.display = 'block';
+                } else {
+                    window.location.href = 'blog.html';
+                }
+            } catch (error) {
+                console.error("Error loading blog post:", error);
+                window.location.href = 'blog.html';
+            }
+        }
+
+        window.addEventListener('load', loadBlogPost);
+    </script>
+</body>
+</html> 
