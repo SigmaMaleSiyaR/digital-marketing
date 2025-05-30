@@ -14,23 +14,49 @@ function formatDate(timestamp) {
     });
 }
 
-// Function to create message card
-function createMessageCard(message) {
+// Function to create message table
+function createMessageTable(messages) {
     return `
-        <div class="card mb-3">
+        <div class="card">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                        <h5 class="card-title">${message.name}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${message.email}</h6>
-                    </div>
-                    <small class="text-muted">${formatDate(message.timestamp)}</small>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${messages.map(message => `
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-circle bg-primary text-white me-2">
+                                                ${message.name.charAt(0).toUpperCase()}
+                                            </div>
+                                            <div>${message.name}</div>
+                                        </div>
+                                    </td>
+                                    <td>${message.email}</td>
+                                    <td>${message.subject}</td>
+                                    <td>${message.message}</td>
+                                    <td>${formatDate(message.timestamp)}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger" 
+                                                onclick="deleteMessage('${message.id}')">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 </div>
-                <h6 class="mt-3">Subject: ${message.subject}</h6>
-                <p class="card-text mt-2">${message.message}</p>
-                <button class="btn btn-danger btn-sm" onclick="deleteMessage('${message.id}')">
-                    Delete Message
-                </button>
             </div>
         </div>
     `;
@@ -60,12 +86,12 @@ async function loadMessages() {
             return;
         }
 
-        const messageCards = messagesSnapshot.docs.map(doc => {
-            const message = { id: doc.id, ...doc.data() };
-            return createMessageCard(message);
-        });
+        const messages = messagesSnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
 
-        messagesList.innerHTML = messageCards.join('');
+        messagesList.innerHTML = createMessageTable(messages);
     } catch (error) {
         console.error("Error loading messages:", error);
         document.getElementById('messagesList').innerHTML = 
