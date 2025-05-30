@@ -9,13 +9,13 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDk2SyeNzOuUcrbVPKgAjBacIBxm5aXVPI",
-    authDomain: "uniment-llp.firebaseapp.com",
-    projectId: "uniment-llp",
-    storageBucket: "uniment-llp.appspot.com",
-    messagingSenderId: "271526023218",
-    appId: "1:271526023218:web:705219d953347625a66c2b",
-    measurementId: "G-6J5KWKSRG5"
+    apiKey: "AIzaSyDd8uW-Ha1piTSR8o7gqBDsUlNe94aj0lI",
+    authDomain: "unimentsolutionllp.firebaseapp.com",
+    projectId: "unimentsolutionllp",
+    storageBucket: "unimentsolutionllp.appspot.com",
+    messagingSenderId: "441240718537",
+    appId: "1:441240718537:web:8c47f31208fa6bc29cd118",
+    measurementId: "G-JGB5E86ZY8"
 };
 
 // Initialize Firebase
