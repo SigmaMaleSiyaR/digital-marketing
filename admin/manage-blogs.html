@@ -12,78 +12,59 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f4f6f9;
         }
-
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+        .container {
+            max-width: 1000px;
+        }
         .blog-table {
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
         .blog-table th {
             background: #1a237e;
             color: white;
             font-weight: 500;
             padding: 15px;
         }
-
         .blog-table td {
             padding: 15px;
             vertical-align: middle;
         }
-
         .blog-thumbnail {
             width: 100px;
             height: 60px;
             object-fit: cover;
             border-radius: 6px;
         }
-
         .action-buttons .btn {
             padding: 0.375rem 0.75rem;
             margin: 0 2px;
         }
-
         .btn-view {
             background-color: #1a237e;
             color: white;
         }
-
         .btn-edit {
             background-color: #0d47a1;
             color: white;
         }
-
         .btn-delete {
             background-color: #c62828;
             color: white;
         }
-
         .btn-view:hover, .btn-edit:hover, .btn-delete:hover {
             opacity: 0.9;
             color: white;
         }
-
         .no-blogs {
             text-align: center;
             padding: 40px;
             color: #666;
-        }
-
-        .modal-content {
-            border-radius: 12px;
-        }
-
-        .modal-header {
-            background: #1a237e;
-            color: white;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .modal-body img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -132,24 +113,6 @@
         </div>
     </div>
 
-    <!-- View Blog Modal -->
-    <div class="modal fade" id="viewBlogModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">View Blog</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h3 id="modal-title"></h3>
-                    <div id="modal-date" class="text-muted mb-3"></div>
-                    <img id="modal-thumbnail" class="w-100" src="" alt="">
-                    <div id="modal-content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Delete Confirmation Modal -->
     <div class="modal fade" id="deleteBlogModal" tabindex="-1">
         <div class="modal-dialog">
@@ -175,7 +138,6 @@
         import { collection, getDocs, deleteDoc, doc, orderBy, query } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 
         let currentBlogId = null;
-        const viewModal = new bootstrap.Modal(document.getElementById('viewBlogModal'));
         const deleteModal = new bootstrap.Modal(document.getElementById('deleteBlogModal'));
 
         async function loadBlogs() {
@@ -211,9 +173,9 @@
                             <td>${blog.title}</td>
                             <td>${date}</td>
                             <td class="action-buttons">
-                                <button class="btn btn-view" onclick="viewBlog('${doc.id}')">
+                                <a href="/blog-post.html?id=${doc.id}" class="btn btn-view" target="_blank">
                                     <i class="fas fa-eye"></i>
-                                </button>
+                                </a>
                                 <a href="create-blog.html?id=${doc.id}" class="btn btn-edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
@@ -230,34 +192,6 @@
                 alert("Error loading blogs. Please try again.");
             }
         }
-
-        window.viewBlog = async function(blogId) {
-            try {
-                const docRef = doc(db, 'blogs', blogId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const blog = docSnap.data();
-                    const date = blog.createdAt ? new Date(blog.createdAt.toDate()).toLocaleDateString() : 'N/A';
-
-                    document.getElementById('modal-title').textContent = blog.title;
-                    document.getElementById('modal-date').textContent = date;
-                    document.getElementById('modal-content').innerHTML = blog.content;
-
-                    if (blog.thumbnailURL) {
-                        document.getElementById('modal-thumbnail').src = blog.thumbnailURL;
-                        document.getElementById('modal-thumbnail').style.display = 'block';
-                    } else {
-                        document.getElementById('modal-thumbnail').style.display = 'none';
-                    }
-
-                    viewModal.show();
-                }
-            } catch (error) {
-                console.error("Error loading blog:", error);
-                alert("Error loading blog. Please try again.");
-            }
-        };
 
         window.confirmDelete = function(blogId) {
             currentBlogId = blogId;

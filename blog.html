@@ -224,7 +224,7 @@
                                         </div>
                                     </div>
                                     <a href="blog-post.html?id=${doc.id}" class="blog-post-title">${blog.title}</a>
-                                    <p class="card-text">${blog.content.substring(0, 150)}...</p>
+                                    <p class="card-text">${blog.content.replace(/<img[^>]*>/g, '').substring(0, 150)}...</p>
                                     <a href="blog-post.html?id=${doc.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
