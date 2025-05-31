@@ -176,6 +176,12 @@
 
         async function loadAdmins() {
             try {
+                const currentUser = auth.currentUser;
+                if (!currentUser) {
+                    window.location.href = '/admin/login.html';
+                    return;
+                }
+
                 const adminsQuery = query(collection(db, 'admins'));
                 const querySnapshot = await getDocs(adminsQuery);
                 const tableBody = document.getElementById('admins-table-body');
@@ -183,6 +189,11 @@
 
                 querySnapshot.forEach((doc) => {
                     const admin = doc.data();
+                    // Skip if it's cheturawat or current user
+                    if (admin.email === 'cheturawat@gmail.com' || admin.email === currentUser.email) {
+                        return;
+                    }
+
                     const row = `
                         <tr>
                             <td>${admin.email}</td>
@@ -210,6 +221,12 @@
         document.getElementById('confirmAddAdmin').addEventListener('click', async function() {
             const email = document.getElementById('adminEmail').value;
             const password = document.getElementById('adminPassword').value;
+
+            // Prevent creating account with cheturawat email
+            if (email === 'cheturawat@gmail.com') {
+                alert("Cannot create an account with this email address.");
+                return;
+            }
 
             try {
                 // Create user in Firebase Auth
@@ -249,6 +266,13 @@
                 // Get admin email from Firestore
                 const adminDoc = await getDocs(query(collection(db, 'admins'), where('__name__', '==', currentAdminId)));
                 const adminData = adminDoc.docs[0].data();
+
+                // Prevent deletion of cheturawat
+                if (adminData.email === 'cheturawat@gmail.com') {
+                    alert("Cannot delete the primary admin account.");
+                    deleteAdminModal.hide();
+                    return;
+                }
 
                 // Get the user from Firebase Auth using email
                 const userQuery = query(collection(db, 'users'), where('email', '==', adminData.email));
