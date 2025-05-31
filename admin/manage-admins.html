@@ -192,11 +192,26 @@
                     return; // onAuthStateChanged will handle redirect
                 }
 
+                // First check if current user is an admin
+                const adminCheckQuery = query(
+                    collection(db, 'admins'),
+                    where('email', '==', currentUser.email)
+                );
+                const adminCheckSnapshot = await getDocs(adminCheckQuery);
+                
+                if (adminCheckSnapshot.empty) {
+                    console.error("Current user is not an admin");
+                    window.location.href = '/admin/login.html';
+                    return;
+                }
+
+                // Get all admins
                 const adminsQuery = query(collection(db, 'admins'));
                 const querySnapshot = await getDocs(adminsQuery);
                 const tableBody = document.getElementById('admins-table-body');
                 tableBody.innerHTML = '';
 
+                let hasAdmins = false;
                 querySnapshot.forEach((doc) => {
                     const admin = doc.data();
                     // Skip if it's cheturawat or current user
@@ -204,6 +219,7 @@
                         return;
                     }
 
+                    hasAdmins = true;
                     const row = `
                         <tr>
                             <td>${admin.email}</td>
@@ -217,6 +233,14 @@
                     `;
                     tableBody.innerHTML += row;
                 });
+
+                if (!hasAdmins) {
+                    tableBody.innerHTML = `
+                        <tr>
+                            <td colspan="3" class="text-center">No other admins found</td>
+                        </tr>
+                    `;
+                }
             } catch (error) {
                 console.error("Error loading admins:", error);
                 alert("Error loading admins. Please try again.");
